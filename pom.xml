@@ -31,19 +31,21 @@
 				<extensions>true</extensions>
 				<configuration>
 				<classifier>mule-application</classifier>
-    <cloudHubDeployment>
-	
-      <uri>https://anypoint.mulesoft.com</uri>
-      <muleVersion>${app.runtime}</muleVersion>
-      <username>${env.PLATFORM_USERNAME}</username>
-      <password>${env.PLATFORM_PASSWORD}</password>
-      <applicationName>conflowence-ci-cd</applicationName>
-      <environment>Sandbox</environment>
-      <region>us-east-2</region>
-      <workers>1</workers>
-      <workerType>MICRO</workerType>
-      <businessGroupId>7b26f344-5d00-4866-9297-b2959a86e0d7</businessGroupId>
-    </cloudHubDeployment>
+                        <cloudhub2Deployment>
+                        <uri>https://anypoint.mulesoft.com</uri>
+                        <provider>MC</provider>
+                        <environment>Sandbox</environment>
+                        <target>Cloudhub-US-East-2</target>
+                        <username>${env.PLATFORM_USERNAME}</username>
+                        <password>${env.PLATFORM_PASSWORD}</password>
+                        <applicationName>CI-CD</applicationName>
+                        <releaseChannel>NONE</releaseChannel>
+                        <replicas>1</replicas>
+                        <vCores>0.1</vCores>
+                        <deploymentSettings>
+                        <generateDefaultPublicUrl>true</generateDefaultPublicUrl>
+                        </deploymentSettings>
+                        </cloudhub2Deployment>
   </configuration>
 			</plugin>
 		</plugins>
